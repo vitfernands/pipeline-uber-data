@@ -34,6 +34,9 @@ def float_into_int(data, columns:list):
 
     return data
 
-def saving_data(data, path):
-    data.to_csv(path)
+def saving_data(data, path, format):
+    if format.lower() == 'csv':
+        data.to_csv(path)
+    if format.lower() == 'parquet':
+        data.to_parquet(path, engine="pyarrow", index=False)
 

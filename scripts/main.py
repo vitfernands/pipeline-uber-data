@@ -25,4 +25,5 @@ data_transformed = float_into_int(data_datetime, [
 
 print(data_transformed)
 
-saving_data(data_transformed, 'data-processed/uber_data.csv')
+saving_data(data_transformed, 'data-processed/uber_data.csv', 'csv')
+saving_data(data_transformed, 'data-processed/uber_data.parquet', 'parquet')
