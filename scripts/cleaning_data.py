@@ -40,3 +40,10 @@ def saving_data(data, path, format):
     if format.lower() == 'parquet':
         data.to_parquet(path, engine="pyarrow", index=False)
 
+def concat_columns(data, columns:list, new_column):
+    data[new_column] = data[columns[0]] + " " + data[columns[1]]
+    return data
+
+
+def drop_columns(data, columns:list):
+    return data.drop(columns = columns, axis=1)
